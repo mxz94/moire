@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-
+	import '$themes/global.css';
 
 	import { config } from '../../moire.config';
 

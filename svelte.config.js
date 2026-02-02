@@ -13,7 +13,8 @@ const config = {
       base: '/moire'
     },
     alias: {
-      $theme: './src/theme'
+      $theme: './src/theme',
+      $themes: './src/themes'
     }
 	}
 };

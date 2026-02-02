@@ -55,7 +55,7 @@ export const load: PageServerLoad = async () => {
 
       processedMarkdown = processedMarkdown.replace(
         /(^|\s)#([^\s#.,!?;:()\[\]"']+)/g,
-        '$1<button class="memo-tag" data-tag="$2">#$2</button>'
+        '$1<button class="bg-transparent border-none p-0 font-bold text-black cursor-pointer underline hover:text-gray-600 transition-colors" data-tag="$2">#$2</button>'
       );
 
       const htmlContent = await marked.parse(processedMarkdown);
