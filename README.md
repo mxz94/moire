@@ -24,41 +24,30 @@ Moire is a tool designed to seamlessly synchronize your thoughts from Apple Note
 
 - **Seamless Sync**: Direct integration with Apple Notes via Shortcuts.
 - **Markdown Export**: Convert your notes to Markdown format. Easy to migrate.
-- **Theme Support**: Customizable themes (e.g., Receipt, Pixel).
+- **Static Generator**: A Python script (`scripts/generate.py`) reads `src/memos/**/*.md` and renders a single dense, dated HTML log (`build/index.html`) — no Node build step required.
 
 ## Development
 
 ### Prerequisites
 
-Ensure you have the following installed:
-- Node.js (v18 or higher)
-- pnpm (recommended)
+- Python 3.11+
+- `markdown` (`pip install markdown`)
 
-### Installation
-
-Clone the repository and install dependencies:
+### Generate the site
 
 ```bash
-git clone https://github.com/moirelog/moire.git
-cd moire
-pnpm install
+python scripts/generate.py      # -> build/index.html
 ```
 
-### Development
-
-Start the development server:
+### Preview locally
 
 ```bash
-pnpm dev
+pnpm dev                        # serves build/ at http://localhost:5173
 ```
 
-### Build
+### Deploy
 
-Build for production:
-
-```bash
-pnpm build
-```
+`deploy.yml` runs `python scripts/generate.py` on push to `main` and publishes `build/` to GitHub Pages.
 
 ## License
 
